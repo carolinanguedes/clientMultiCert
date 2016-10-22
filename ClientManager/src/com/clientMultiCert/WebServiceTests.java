@@ -3,7 +3,6 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.FormParam;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -54,7 +53,7 @@ public class WebServiceTests {
 		System.out.println("Test case name: testGetAllClients, Result: " + result );
 	}
 
-	//Test: Delete User of id 1
+	//Test: Delete client of id 1
 	//Test: Check if result is success XML.
 	private void testDeleteClient(){
 		String callResult = clientJavax
@@ -96,8 +95,8 @@ public class WebServiceTests {
 
 	}
 	
-	   //Test: Get User of id 1
-	   //Test: Check if user is same as sample user
+	   //Test: Get client with a specific name
+	   //Test: Check if list is same as sample list
 	   private void testGetClientListByName(){
 		  List<com.clientMultiCert.Client> sampleClientList = new  ArrayList<com.clientMultiCert.Client>();
 		  com.clientMultiCert.Client sampleClient = new  com.clientMultiCert.Client();
@@ -119,7 +118,8 @@ public class WebServiceTests {
 	      System.out.println("Test case name: testGetClientListByName, Result: " + result );
 	   }
 	   
-
+	   //Test: Get client with a specific nif
+	   //Test: Check if client is same as client
 		private void testGetClientByNif() {
 			com.clientMultiCert.Client sampleClient = new com.clientMultiCert.Client();
 		      sampleClient.setNif(BigInteger.valueOf(3783731));

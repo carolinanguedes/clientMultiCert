@@ -60,8 +60,6 @@ public class ClientDao {
 		return clientAlreadyExists;
 	}
 
-
-	//Rever este metodo
 	
 	
 	/**
@@ -86,7 +84,6 @@ public class ClientDao {
 		}
 	}
 
-	//Rever este metodo
 	/**
 	 * Get all the clients.                         
 	 *
@@ -95,7 +92,7 @@ public class ClientDao {
 	public List<Client> getAllClients(){
 		List<Client> clientList = null;
 		try {
-			File file = new File("Users.dat");
+			File file = new File("Clients.dat");
 			if (!file.exists()) {
 				Client client = new Client();
 				clientList = new ArrayList<Client>();
@@ -116,7 +113,6 @@ public class ClientDao {
 		return clientList;
 	}
 	
-	//Rever este metodo
 	/**
 	 * Get all the clients with a specified name.  
 	 *                        
@@ -128,7 +124,7 @@ public class ClientDao {
 		List<Client> clientListByName = null;
 
 		try {
-			File file = new File("Users.dat");
+			File file = new File("Clients.dat");
 			if (!file.exists()) {
 				Client client = new Client();
 				auxClientList = new ArrayList<Client>();
@@ -155,7 +151,6 @@ public class ClientDao {
 		return clientListByName;
 	}
 	
-	//o q é pretendido devolver aqui?
 	/**
 	 * Get the client with a specified nif.  
 	 *                        

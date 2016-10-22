@@ -29,24 +29,24 @@ public class ClientWebService {
    }	
    
    @GET
-   @Path("/clients/{clientName}")
+   @Path("/clients/{name}")
    @Produces(MediaType.APPLICATION_XML)
-   public List<Client> getAllClientsByName(@FormParam("clientName") String name){
+   public List<Client> getAllClientsByName(@FormParam("name") String name){
       return clientDao.getAllClientsByName(name);
    }	
    
    @GET
    @Path("/clients/{nif}")
    @Produces(MediaType.APPLICATION_XML)
-   public Client getUser(@PathParam("nif") BigInteger nif){
+   public Client getClient(@PathParam("nif") BigInteger nif){
       return clientDao.getClientByNIF(nif);
    }
    
    @PUT
-   @Path("/clients")
+   @Path("/clients/{name}/{address}/{nif}/{phone}")
    @Produces(MediaType.APPLICATION_XML)
    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-   public void createUser(@FormParam("id") int id,
+   public void createClient(@FormParam("id") int id,
       @FormParam("name") String name,
       @FormParam("address") String address,
       @FormParam("nif") BigInteger nif,
@@ -60,7 +60,7 @@ public class ClientWebService {
    @DELETE
    @Path("/clients/{clientid}")
    @Produces(MediaType.APPLICATION_XML)
-   public void deleteUser(@PathParam("clientid") int clientid){
+   public void deleteClient(@PathParam("clientid") int clientid){
       clientDao.deleteClient(clientid);
    }
 }
